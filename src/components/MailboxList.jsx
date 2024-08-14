@@ -1,6 +1,10 @@
 import { Link } from 'react-router-dom';
 
 const MailboxList = ({ mailboxes }) => {
+  if(mailboxes.length === 0 || !mailboxes){
+    return (<h2>Mailboxes not found</h2>)
+  }
+  else{
   return (
     <>
       <h1>MailboxList</h1>
@@ -11,6 +15,7 @@ const MailboxList = ({ mailboxes }) => {
       </ul>
     </>
   );
+}
 };
 
 export default MailboxList;
